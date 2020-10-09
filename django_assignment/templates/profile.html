@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load static %} 
+
+{% block content %}
+	<div class="card" style="width:500px">
+	  <img class="card-img-top" src="{{ profile.image.url }}" alt="Card image">
+	  <div>
+	    <h4 class="card-title">Name:{{ profile.first_name }} {{ profile.last_name}}</h4>
+	    <p class="card-text">Age: {{ profile.age }}</p>
+	    <p class="card-text">Unique Id:{{ profile.unique_id }} 
+	    <p class="card-text">Email: {{ profile.email }}
+	  </div>
+	</div>
+	<div style="margin-top: 50px;">
+		<form action="." method="POST">{% csrf_token %}
+			<button type="submit" class="btn btn-danger">Logout</button>
+		</form>
+	</div>
+{% endblock %}

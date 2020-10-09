@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block heading %}
+	<h2 class="mt-5" style="position: relative;left: 40%;">Login</h2>
+{% endblock %}
+
+
+{% block content %}
+  <form method="POST" action=".">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    {{ form|crispy }}
+    {% if error %}
+    	<div style="color: red;">{{error}}</div>
+    {% endif %}
+    <button type="submit" class="btn btn-primary">Login</button>
+    <p><a href="/signup">Create an account?</a></p>
+  </form>
+{% endblock %}
