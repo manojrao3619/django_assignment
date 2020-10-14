@@ -1,3 +1,3 @@
 # django_assignment
 
-### Token creation and management by JWT using django.
+### Token creation and management using JWT in python-django.
